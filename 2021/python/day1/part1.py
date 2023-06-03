@@ -14,7 +14,7 @@ data_test: list = [
 data_real: list = []
 
 
-def count_increases(data: list) -> int:
+def count_increases_using_enumerate(data: list) -> int:
     count: int = 0
 
     if len(data) < 2:
@@ -29,6 +29,9 @@ def count_increases(data: list) -> int:
 
     return count
 
+def count_increases_using_listcomp(data: list) -> int:
+    return sum([data[i+1] > data[i] for i in range(len(data) - 1) ])
+
 
 with open('./2021/python/day1/numbers.txt', 'r') as numbers:
     lines = numbers.read().splitlines() # .readlines()
@@ -36,5 +39,8 @@ with open('./2021/python/day1/numbers.txt', 'r') as numbers:
 
 print(len(data_real))
 
-print(f'Testdata: {count_increases(data_test)}')
-print(f'Realdata: {count_increases(data_real)}')
+print(f'Testdata: {count_increases_using_enumerate(data_test)}')
+print(f'Realdata: {count_increases_using_enumerate(data_real)}')
+
+print(f'Testdata: {count_increases_using_listcomp(data_test)}')
+print(f'Realdata: {count_increases_using_listcomp(data_real)}')
