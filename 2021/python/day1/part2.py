@@ -18,7 +18,7 @@ with open('./2021/python/day1/numbers.txt', 'r') as numbers:
 
 
 def count_increase_bigwindow(data: list) -> int:
-    return sum(sum(data[(i+1):(i+4)]) > sum(data[i:(i+3)]) for i in range(len(data) - 3))
+    return sum(sum(data[(i+1):(i+4)]) > sum(data[i:(i+3)]) for i in range(len(data) - 2))
 
 
 
