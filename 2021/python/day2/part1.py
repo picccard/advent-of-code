@@ -10,8 +10,8 @@ data_test = [
 
 def calc_pos(instructions: list[str]) -> dict:
     pos = {
-        'horizontal':0,
-        'depth':0
+        'horizontal': 0,
+        'depth': 0
     }
     for task in instructions:
         name, num = task.split()
